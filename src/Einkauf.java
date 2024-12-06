@@ -1,10 +1,18 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Einkauf extends JFrame {
     private JPanel jpPanel;
-
-
+    private JLabel lblStueckzahl;
+    private JLabel lblStueckpreis;
+    private JLabel lblRabatt;
+    private JTextField txtStueckzahl;
+    private JTextField txtStueckpreis;
+    private JTextField txtRabatt;
+    private JButton btnBerechnen;
+    private JButton btnEnde;
 
 
     public Einkauf() throws HeadlessException {
@@ -16,6 +24,23 @@ setContentPane(jpPanel);
 setVisible(true);
 
 
+        btnBerechnen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                berechne();
+            }
+        });
+
+
+        btnEnde.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+    }
+
+    private void berechne() {
 
 
 
