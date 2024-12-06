@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class Einkauf extends JFrame {
     private JPanel jpPanel;
@@ -38,6 +40,22 @@ setVisible(true);
                 System.exit(0);
             }
         });
+
+
+        txtStueckzahl.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                super.keyPressed(e);
+
+                if (e.getKeyCode() == KeyEvent.VK_ENTER)
+                    txtStueckpreis.requestFocus();
+            }
+        });
+
+
+
+
+
     }
 
     private void berechne() {
